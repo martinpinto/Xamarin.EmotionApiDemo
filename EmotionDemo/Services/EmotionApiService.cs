@@ -73,6 +73,8 @@ namespace EmotionDemo
 					{
 						string jsonResponse = response.Content.ReadAsStringAsync().Result;
 						var data = (JContainer) JsonConvert.DeserializeObject(jsonResponse);
+						//var data = JsonConvert.DeserializeObject<List<EmotionCollection>>(jsonResponse);
+
 						//return jsonResponse;
 						return data;
 					}

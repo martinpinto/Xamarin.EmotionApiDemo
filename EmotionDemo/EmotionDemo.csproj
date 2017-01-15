@@ -29,7 +29,6 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="EmotionDemoPage.xaml" />
     <EmbeddedResource Include="Views\EmotionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -39,13 +38,11 @@
     <EmbeddedResource Include="Views\PersonDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmotionDemoPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="EmotionDemoPage.xaml.cs">
-      <DependentUpon>EmotionDemoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\EmotionPage.xaml.cs">
@@ -60,6 +57,9 @@
     <Compile Include="Models\EmotionCollection.cs" />
     <Compile Include="Views\PersonDetailPage.xaml.cs">
       <DependentUpon>PersonDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmotionDemoPage.xaml.cs">
+      <DependentUpon>EmotionDemoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
