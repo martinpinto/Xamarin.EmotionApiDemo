@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
@@ -8,6 +9,22 @@ namespace EmotionDemo
 {
 	public partial class EmotionPage : ContentPage
 	{
+		private Person _person;
+
+		public EmotionPage(Person person)
+		{
+			_person = person;
+
+			InitializeComponent();
+		}
+
+		protected async override void OnAppearing()
+		{
+			JContainer emotionJson = await EmotionApiService.GetEmotion(_person);
+
+			BindingContext = emotionJson.ToString();
+
+		}
 
 		public EmotionPage(String emotion)
 		{

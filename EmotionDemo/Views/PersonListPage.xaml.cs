@@ -62,8 +62,7 @@ namespace EmotionDemo
 			//DisplayAlert("Tapped", person.Status, "OK");
 			//string response = await EmotionApiService.GetEmotion(person);
 
-			JContainer response = await EmotionApiService.GetEmotion(person);
-			await Navigation.PushAsync(new EmotionPage(response));
+			await Navigation.PushAsync(new EmotionPage(person));
 		}
 	}
 }
