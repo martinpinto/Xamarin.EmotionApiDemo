@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage 
+<ContentPage
+		Title="Welcome to the Emotion API Demo"
 		xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EmotionDemo" x:Class="EmotionDemo.EmotionDemoPage">
 	 <ContentPage.Padding>
 	 	<OnPlatform x:TypeArguments="Thickness"
@@ -8,9 +9,9 @@
             WinPhone="0, 0, 0, 0" />
 	 </ContentPage.Padding>
 	<StackLayout>
-		<Label Text="Welcome to the Emotion API Demo" HorizontalOptions="Center" />
-		<Label Text="The purpose of this app is to demonstrate the power of the Microsoft Emotion API." HorizontalOptions="Center" />
-		<Label Text="This app is not affiliated with Microsoft and it's respective API and company name is a trademark of Microsoft Corporation." HorizontalOptions="Center" />
+		<Label Text="The purpose of this app is to demonstrate the power of the Microsoft Emotion API." HorizontalOptions="Start" />
+		<Label Text="This app is not affiliated with Microsoft and it's respective API and company name is a trademark of Microsoft Corporation." HorizontalOptions="Start" />
+		<Label Text="Microsoft is a trademark of the Microsoft group of companies." HorizontalOptions="Start" />
 		<Button Text="Next" Clicked="Handle_Clicked" />
 	</StackLayout>
 </ContentPage>

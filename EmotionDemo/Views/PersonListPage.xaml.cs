@@ -41,11 +41,6 @@ namespace EmotionDemo
 			_persons.Remove(person);
 		}
 
-		void Follow_Clicked(object sender, System.EventArgs e)
-		{
-			DisplayAlert("Clicked", "Thank you for following me!", "OK");
-		}
-
 		void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
 		{
 			if (e.SelectedItem == null)

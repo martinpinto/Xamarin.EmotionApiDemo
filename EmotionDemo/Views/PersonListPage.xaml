@@ -12,7 +12,7 @@
 				Refreshing="Handle_Refreshing">
 			<ListView.ItemTemplate>
 				<DataTemplate>
-					<ViewCell>
+					<ViewCell BindingContext="{Binding .}">
 						<ViewCell.ContextActions>
 							<MenuItem Text="Show" Clicked="Show_Clicked" CommandParameter="{Binding .}" />
 							<MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}" />
@@ -23,7 +23,6 @@
 								<Label Text="{Binding Name}" />
 								<Label Text="{Binding Status}" TextColor="Gray" />
 							</StackLayout>
-							<Button Text="Follow" Clicked="Follow_Clicked" />
 						</StackLayout>
 					</ViewCell> 
 				</DataTemplate>	

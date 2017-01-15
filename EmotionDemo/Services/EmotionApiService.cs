@@ -24,7 +24,7 @@ namespace EmotionDemo
 			{
 				new Person
 					{
-					Name = "Alice", ImageUrl = BasePictureSmallUrl + "4", Status = "Hey I'm free."
+					Name = "Alice", ImageUrl = BasePictureSmallUrl + "4", Status = "Hey, I'm free."
 					},
 				new Person
 					{
