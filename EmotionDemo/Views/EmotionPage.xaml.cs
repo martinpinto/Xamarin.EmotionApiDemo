@@ -1,22 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
 namespace EmotionDemo
 {
 	public partial class EmotionPage : ContentPage
 	{
-		public EmotionPage(Person person)
+		public EmotionPage(String emotion)
 		{
-			if (person == null)
+			if (emotion == null)
 			{
 				throw new ArgumentNullException();
 			}
 
-			BindingContext = person;
+			BindingContext = emotion;
 
 			InitializeComponent();
 		}
+
+		public EmotionPage(JContainer emotionJson)
+		{
+			if (emotionJson == null)
+			{
+				Navigation.PopAsync();
+			}
+
+			Emotion emotion = new Emotion
+			{
+
+			};
+
+			BindingContext = emotion;
+
+			InitializeComponent();
+		}	
 	}
 }

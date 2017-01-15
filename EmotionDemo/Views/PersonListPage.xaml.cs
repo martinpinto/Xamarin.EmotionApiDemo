@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 
 namespace EmotionDemo
@@ -32,22 +33,29 @@ namespace EmotionDemo
 			DisplayAlert("Clicked", "Thank you for following me!", "OK");
 		}
 
-		async void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+		void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
 		{
 			if (e.SelectedItem == null)
 			{
 				return;
 			}
-			var person = e.SelectedItem as Person;
-			await Navigation.PushAsync(new EmotionPage(person));
-			listView.SelectedItem = null;
+			//var person = e.SelectedItem as Person;
 			//DisplayAlert("Selected", person.Name, "OK");
+			listView.SelectedItem = null;
 		}
 
-		void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+		async void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
 		{
-			//var person = e.Item as Person;
+			if (e.Item == null)
+			{
+				return;
+			}
+			var person = e.Item as Person;
 			//DisplayAlert("Tapped", person.Status, "OK");
+			//string response = await EmotionApiService.GetEmotion(person);
+
+			JContainer response = await EmotionApiService.GetEmotion(person);
+			await Navigation.PushAsync(new EmotionPage(response));
 		}
 
 		public PersonListPage()
