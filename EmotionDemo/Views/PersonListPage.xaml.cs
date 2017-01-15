@@ -11,6 +11,13 @@ namespace EmotionDemo
 	{
 		private List<Person> _persons;
 
+		public PersonListPage()
+		{
+			InitializeComponent();
+
+			listView.ItemsSource = EmotionApiService.GetPersons();
+		}
+
 		void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
 		{
 			listView.ItemsSource = EmotionApiService.GetPersons(e.NewTextValue);
@@ -53,16 +60,8 @@ namespace EmotionDemo
 			var person = e.Item as Person;
 			//DisplayAlert("Tapped", person.Status, "OK");
 			//string response = await EmotionApiService.GetEmotion(person);
-
 			JContainer response = await EmotionApiService.GetEmotion(person);
 			await Navigation.PushAsync(new EmotionPage(response));
-		}
-
-		public PersonListPage()
-		{
-			InitializeComponent();
-
-			listView.ItemsSource = EmotionApiService.GetPersons();
 		}
 	}
 }

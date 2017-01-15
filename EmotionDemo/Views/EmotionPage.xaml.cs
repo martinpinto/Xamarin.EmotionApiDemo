@@ -8,6 +8,7 @@ namespace EmotionDemo
 {
 	public partial class EmotionPage : ContentPage
 	{
+
 		public EmotionPage(String emotion)
 		{
 			if (emotion == null)
@@ -26,11 +27,19 @@ namespace EmotionDemo
 			{
 				Navigation.PopAsync();
 			}
-
 			/*
 			EmotionCollection emotions = new EmotionCollection();
 			dynamic dynJson = JsonConvert.DeserializeObject(emotionJson.ToString());
 
+			JArray arr = JArray.Parse(emotionJson.ToString());
+			var obj = arr.Values();
+			foreach (var it in obj)
+			{
+				var itobj = it.Values();
+				foreach (var itobjit in itobj)
+				{
+				}
+			}
 			foreach (var item in dynJson)
 			{
 				Emotion emotion = new Emotion(
@@ -40,7 +49,7 @@ namespace EmotionDemo
 				emotions.Add(emotion);
 			}
 
-			BindingContext = emotions;
+			// BindingContext = emotions;
 			*/
 			BindingContext = emotionJson.ToString();
 			InitializeComponent();
