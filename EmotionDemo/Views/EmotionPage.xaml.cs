@@ -27,14 +27,35 @@ namespace EmotionDemo
 				Navigation.PopAsync();
 			}
 
-			Emotion emotion = new Emotion
+			/*
+			EmotionCollection emotions = new EmotionCollection();
+			dynamic dynJson = JsonConvert.DeserializeObject(emotionJson.ToString());
+
+			foreach (var item in dynJson)
 			{
+				Emotion emotion = new Emotion(
+					item.faceRectangle,
+					item.scores
+				);
+				emotions.Add(emotion);
+			}
 
-			};
-
-			BindingContext = emotion;
-
+			BindingContext = emotions;
+			*/
+			BindingContext = emotionJson.ToString();
 			InitializeComponent();
-		}	
+		}
+
+		private void ParseEmotions()
+		{
+			boxView = new BoxView
+			{
+				Color = Color.Accent,
+				WidthRequest = 150,
+				HeightRequest = 150,
+				HorizontalOptions = LayoutOptions.Center,
+				VerticalOptions = LayoutOptions.CenterAndExpand
+			};
+		}
 	}
 }
