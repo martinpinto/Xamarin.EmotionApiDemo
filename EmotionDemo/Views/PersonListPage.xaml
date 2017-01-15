@@ -14,6 +14,7 @@
 				<DataTemplate>
 					<ViewCell>
 						<ViewCell.ContextActions>
+							<MenuItem Text="Show" Clicked="Show_Clicked" CommandParameter="{Binding .}" />
 							<MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}" />
 						</ViewCell.ContextActions>
 						<StackLayout Orientation="Horizontal" Padding="5">

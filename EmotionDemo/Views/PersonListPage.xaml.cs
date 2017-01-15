@@ -18,6 +18,12 @@ namespace EmotionDemo
 			listView.ItemsSource = EmotionApiService.GetPersons();
 		}
 
+		async void Show_Clicked(object sender, System.EventArgs e)
+		{
+			Person person = (sender as MenuItem).CommandParameter as Person;
+			await Navigation.PushAsync(new NavigationPage(new PersonDetailPage(person)));
+		}
+
 		void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
 		{
 			listView.ItemsSource = EmotionApiService.GetPersons(e.NewTextValue);

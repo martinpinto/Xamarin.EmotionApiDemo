@@ -28,11 +28,11 @@ namespace EmotionDemo
 					},
 				new Person
 					{
-					Name = "Bob", ImageUrl = BasePictureSmallUrl + "2", Status = "Sorry, not available."
+					Name = "Bob", ImageUrl = BasePictureSmallUrl + "2", Status = "With my kids."
 					},
 				new Person
 					{
-					Name = "Carol", ImageUrl = BasePictureSmallUrl + "5", Status = "Sorry, not available."
+					Name = "Carol", ImageUrl = BasePictureSmallUrl + "5", Status = "On the train."
 					},
 				new Person
 					{
@@ -40,7 +40,7 @@ namespace EmotionDemo
 					},
 				new Person
 					{
-					Name = "Eva", ImageUrl = BasePictureSmallUrl + "9", Status = "Sorry, not available."
+					Name = "Eva", ImageUrl = BasePictureSmallUrl + "9", Status = "Looking at the sky."
 					}
 			};
 

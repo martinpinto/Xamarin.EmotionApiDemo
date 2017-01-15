@@ -6,3 +6,4 @@ This is a Xamarin.Forms app for showcasing the power of the Microsoft Emotion AP
 https://dev.projectoxford.ai/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa
 
 Microsoft ©, Xamarin ©, Xamarin.Forms © and the Microsoft © logo are registered trademarks and copyright of the Microsoft Corporation.
+Microsoft is a trademark of the Microsoft group of companies.
