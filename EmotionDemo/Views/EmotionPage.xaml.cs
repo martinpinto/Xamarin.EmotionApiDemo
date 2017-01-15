@@ -7,8 +7,15 @@ namespace EmotionDemo
 {
 	public partial class EmotionPage : ContentPage
 	{
-		public EmotionPage()
+		public EmotionPage(Person person)
 		{
+			if (person == null)
+			{
+				throw new ArgumentNullException();
+			}
+
+			BindingContext = person;
+
 			InitializeComponent();
 		}
 	}

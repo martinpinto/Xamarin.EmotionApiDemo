@@ -1,4 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EmotionDemo" x:Class="EmotionDemo.EmotionDemoPage">
-	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EmotionDemo" x:Class="EmotionDemo.EmotionDemoPage">
+	 <ContentPage.Padding>
+	 	<OnPlatform x:TypeArguments="Thickness"
+            iOS="0, 20, 0, 0"
+            Android="0, 0, 0, 0"
+            WinPhone="0, 0, 0, 0" />
+	 </ContentPage.Padding>
+	<StackLayout>
+		<Label Text="Welcome" HorizontalOptions="Center" />
+		<Button Text="Next" Clicked="Handle_Clicked" />
+	</StackLayout>
 </ContentPage>

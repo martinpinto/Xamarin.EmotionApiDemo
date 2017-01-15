@@ -8,7 +8,13 @@ namespace EmotionDemo
 		{
 			InitializeComponent();
 
-			MainPage = new EmotionDemoPage();
+			BindingContext = Application.Current;
+
+			MainPage = new NavigationPage(new EmotionDemoPage())
+			{
+				BarBackgroundColor = Color.Gray,
+				BarTextColor = Color.White
+			};
 		}
 
 		protected override void OnStart()

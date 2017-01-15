@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EmotionDemo.PersonListPage">
+	<StackLayout>
+		<SearchBar Placeholder="Search..." TextChanged="Handle_TextChanged" />
+		<ListView
+				x:Name="listView" 
+				SeparatorColor="Blue"
+				HasUnevenRows="true"
+				ItemTapped="Handle_ItemTapped"
+				ItemSelected="Handle_ItemSelected"
+				IsPullToRefreshEnabled="true"
+				Refreshing="Handle_Refreshing">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+							<MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}" />
+						</ViewCell.ContextActions>
+						<StackLayout Orientation="Horizontal" Padding="5">
+							<Image Source="{Binding ImageUrl}" />
+							<StackLayout HorizontalOptions="StartAndExpand">
+								<Label Text="{Binding Name}" />
+								<Label Text="{Binding Status}" TextColor="Gray" />
+							</StackLayout>
+							<Button Text="Follow" Clicked="Follow_Clicked" />
+						</StackLayout>
+					</ViewCell> 
+				</DataTemplate>	
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>
