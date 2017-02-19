@@ -52,7 +52,7 @@ namespace EmotionDemo
 			return persons.Where(c => c.Name.StartsWith(searchText));
 		}
 
-		public async static Task<JContainer> GetEmotion(Person person)
+		public async static Task<List<Emotion>> GetEmotion(Person person)
 		{
 
 			using (var client = new HttpClient())
@@ -72,11 +72,7 @@ namespace EmotionDemo
 					if (response.IsSuccessStatusCode)
 					{
 						string jsonResponse = response.Content.ReadAsStringAsync().Result;
-						var data = (JContainer) JsonConvert.DeserializeObject(jsonResponse);
-						//var data = JsonConvert.DeserializeObject<List<EmotionCollection>>(jsonResponse);
-
-						//return jsonResponse;
-						return data;
+						return JsonConvert.DeserializeObject<List<Emotion>>(jsonResponse);
 					}
 				}
 

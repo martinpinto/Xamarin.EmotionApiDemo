@@ -9,7 +9,29 @@ namespace EmotionDemo
 
 		public Scores Scores { get; set; }
 
-		public string ActualScore { get; set; }
+		public Scores.ScoreType EmotionType { get; set; }
+
+		public double ActualScore
+		{
+			get
+			{
+				double maxValue = 0.0;
+				if (Scores != null)
+				{
+					foreach (var score in Scores.ScoresList)
+					{
+						if (score.Value > maxValue)
+						{
+							maxValue = Math.Max(maxValue, score.Value);
+							EmotionType = score.Key;
+						}
+					}
+				}
+
+				return maxValue;
+			}
+
+		}
 
 		public Emotion(FaceRectangle faceRectangle, Scores scores)
 		{
@@ -19,23 +41,4 @@ namespace EmotionDemo
 
 	}
 
-	public class Scores
-	{
-		public double Anger { get; set; }
-		public double Contempt { get; set; }
-		public double Disgust { get; set; }
-		public double Fear { get; set; }
-		public double Happiness { get; set; }
-		public double Neutral { get; set; }
-		public double Sadness { get; set; }
-		public double Surprise { get; set; }
-	}
-
-	public class FaceRectangle
-	{
-		public int Height { get; set; }
-		public int Left { get; set; }
-		public int Top { get; set; }
-		public int Width { get; set; }
-	}
 }

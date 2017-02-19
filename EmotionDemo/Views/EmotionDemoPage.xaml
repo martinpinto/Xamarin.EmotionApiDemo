@@ -4,7 +4,7 @@
 		xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:EmotionDemo" x:Class="EmotionDemo.EmotionDemoPage">
 	 <ContentPage.Padding>
 	 	<OnPlatform x:TypeArguments="Thickness"
-            iOS="0, 20, 0, 0"
+            iOS="10, 20, 10, 0"
             Android="0, 0, 0, 0"
             WinPhone="0, 0, 0, 0" />
 	 </ContentPage.Padding>

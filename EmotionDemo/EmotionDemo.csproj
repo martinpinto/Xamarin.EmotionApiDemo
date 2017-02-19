@@ -54,13 +54,14 @@
     <Compile Include="Views\PersonListPage.xaml.cs">
       <DependentUpon>PersonListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmotionCollection.cs" />
     <Compile Include="Views\PersonDetailPage.xaml.cs">
       <DependentUpon>PersonDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EmotionDemoPage.xaml.cs">
       <DependentUpon>EmotionDemoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Scores.cs" />
+    <Compile Include="Models\FaceRectangle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

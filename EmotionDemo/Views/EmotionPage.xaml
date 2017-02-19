@@ -4,9 +4,13 @@
 			<ActivityIndicator Color="Black" IsRunning="true" />
 
 			<StackLayout>
-				<Label Text="{Binding .}" />
-				<Label Text="" />
-				<BoxView x:Name="boxView" />
+				<Label Text="Here are the emotions involved with this picture:" />
+				<StackLayout>
+					<Image x:Name="imageUrl" Source="{Binding ImageUrl}" />
+					<Label x:Name="emotionType" Text="{Binding .}" />
+					<Label x:Name="emotionScore" Text="{Binding .}" />
+					<BoxView x:Name="boxView" />
+				</StackLayout>
 			</StackLayout>
 	    </ScrollView>
 </ContentPage>

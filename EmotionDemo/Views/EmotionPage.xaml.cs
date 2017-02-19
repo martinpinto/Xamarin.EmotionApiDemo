@@ -20,68 +20,34 @@ namespace EmotionDemo
 
 		protected async override void OnAppearing()
 		{
-			JContainer emotionJson = await EmotionApiService.GetEmotion(_person);
+			var emotions = await EmotionApiService.GetEmotion(_person);
 
-			BindingContext = emotionJson.ToString();
+			BindingContext = emotions;
 
+			ComputeEmotions(emotions);
 		}
 
-		public EmotionPage(String emotion)
+		private void ComputeEmotions(List<Emotion> emotions)
 		{
-			if (emotion == null)
+			foreach (var emotion in emotions)
 			{
-				throw new ArgumentNullException();
-			}
-
-			BindingContext = emotion;
-
-			InitializeComponent();
-		}
-
-		public EmotionPage(JContainer emotionJson)
-		{
-			if (emotionJson == null)
-			{
-				Navigation.PopAsync();
-			}
-			/*
-			EmotionCollection emotions = new EmotionCollection();
-			dynamic dynJson = JsonConvert.DeserializeObject(emotionJson.ToString());
-
-			JArray arr = JArray.Parse(emotionJson.ToString());
-			var obj = arr.Values();
-			foreach (var it in obj)
-			{
-				var itobj = it.Values();
-				foreach (var itobjit in itobj)
+				boxView = new BoxView
 				{
-				}
-			}
-			foreach (var item in dynJson)
-			{
-				Emotion emotion = new Emotion(
-					item.faceRectangle,
-					item.scores
-				);
-				emotions.Add(emotion);
+					Color = Color.Accent,
+					WidthRequest = 150,
+					HeightRequest = 150,
+					HorizontalOptions = LayoutOptions.Center,
+					VerticalOptions = LayoutOptions.CenterAndExpand,
+					Opacity = 0.3
+				};
+
+				emotionScore.Text = emotion.ActualScore.ToString();
+				emotionType.Text = emotion.EmotionType.ToString();
+
+				imageUrl.Source = _person.ImageUrl;
+				imageUrl.Scale = 1.9;
 			}
 
-			// BindingContext = emotions;
-			*/
-			BindingContext = emotionJson.ToString();
-			InitializeComponent();
-		}
-
-		private void ParseEmotions()
-		{
-			boxView = new BoxView
-			{
-				Color = Color.Accent,
-				WidthRequest = 150,
-				HeightRequest = 150,
-				HorizontalOptions = LayoutOptions.Center,
-				VerticalOptions = LayoutOptions.CenterAndExpand
-			};
 		}
 	}
 }
